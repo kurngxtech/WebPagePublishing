@@ -249,7 +249,7 @@ h6 {
    justify-content: center;
    color: var(--white);
    text-align: center;
-   background: url('hero.png') center/cover no-repeat;
+   background: url('/components/hero.png') center/cover no-repeat;
 }
 
 .hero-overlay {
