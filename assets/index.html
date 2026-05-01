@@ -9,7 +9,7 @@
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link
-      href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&family=Baloo+Thambi+2:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&family=Baloo+Thambi+2:wght@400;500;600;700;800&display=swap"
       rel="stylesheet">
    <link rel="stylesheet" href="styles.css">
 </head>
@@ -107,69 +107,18 @@
             <h2>Make a Donation</h2>
             <div class="underline"></div>
          </div>
-
          <div class="donation-container">
-            <div class="donation-info">
-               <h3>Help Us Reach Our Goal</h3>
-               <p>Your contribution directly impacts a child's life. Even the smallest amount makes a huge
-                  difference in their daily needs and education.</p>
-
-               <div class="progress-wrapper">
-                  <div class="progress-stats">
-                     <span class="raised">Raised: Rp 25.000.000</span>
-                     <span class="goal">Goal: Rp 100.000.000</span>
-                  </div>
-                  <div class="progress-bar-bg">
-                     <div class="progress-bar-fill" style="width: 25%"></div>
-                  </div>
-               </div>
-               <div class="motivational-message">
-                  "Every act of kindness is a seed of hope planted in a child's heart."
-               </div>
-            </div>
-
             <div class="donation-form-card">
-               <form id="donation-form">
-                  <div class="form-row">
-                     <div class="form-group half">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" required placeholder="John Doe">
-                     </div>
-                     <div class="form-group half">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" required placeholder="john@example.com">
-                     </div>
-                  </div>
-
-                  <div class="form-group">
-                     <label>Select Amount</label>
-                     <div class="amount-buttons">
-                        <button type="button" class="amount-btn" data-amount="50000">Rp 50.000</button>
-                        <button type="button" class="amount-btn active" data-amount="100000">Rp 100.000</button>
-                        <button type="button" class="amount-btn" data-amount="250000">Rp 250.000</button>
-                        <button type="button" class="amount-btn" data-amount="500000">Rp 500.000</button>
-                     </div>
-                  </div>
-
-                  <div class="form-group">
-                     <label for="custom-amount">Or Custom Amount</label>
-                     <div class="input-with-icon">
-                        <span>Rp</span>
-                        <input type="number" id="custom-amount" placeholder="Enter amount">
-                     </div>
-                  </div>
-
-                  <div class="form-group">
-                     <label for="payment-method">Payment Method</label>
-                     <select id="payment-method" required>
-                        <option value="" disabled selected>Select payment method</option>
-                        <option value="bank">Bank Transfer (BCA, Mandiri, BNI)</option>
-                        <option value="ewallet">E-Wallet (OVO, GoPay, Dana)</option>
-                     </select>
-                  </div>
-
-                  <button type="submit" class="btn btn-primary submit-btn btn-block">Donate Now</button>
-               </form>
+               <img src="bank_mandiri.png" alt="donation bank account" id="mandiri-logo">
+               <p>Bank Mandiri</p>
+               <p>Bank Account: XXXX-XXXX-XXXX-XXXX</p>
+               <p>a. n. YAYASAN BENIH HARAPAN</p>
+            </div>
+            <div class="donation-form-card">
+               <img src="bank_bni.png" alt="donation bank account" id="bni-logo">
+               <p>Bank BNI</p>
+               <p>Bank Account: XXXX-XXXX-XXXX-XXXX</p>
+               <p>a. n. YAYASAN BENIH HARAPAN</p>
             </div>
          </div>
       </div>
@@ -185,7 +134,6 @@
 
          <div class="contact-wrapper">
             <div class="contact-info">
-               <h3>Get in Touch</h3>
                <p>We'd love to hear from you. Drop us a message, email, or visit our orphanage location to share
                   your love!</p>
 
@@ -250,24 +198,6 @@
                      </svg>
                   </a>
                </div>
-            </div>
-
-            <div class="contact-form-card">
-               <form id="contact-form">
-                  <div class="form-group">
-                     <label for="contact-name">Name</label>
-                     <input type="text" id="contact-name" required placeholder="Your Name">
-                  </div>
-                  <div class="form-group">
-                     <label for="contact-email">Email</label>
-                     <input type="email" id="contact-email" required placeholder="Your Email">
-                  </div>
-                  <div class="form-group">
-                     <label for="contact-message">Message</label>
-                     <textarea id="contact-message" rows="5" required placeholder="How can we help?"></textarea>
-                  </div>
-                  <button type="submit" class="btn btn-primary submit-btn btn-block">Send Message</button>
-               </form>
             </div>
          </div>
       </div>
