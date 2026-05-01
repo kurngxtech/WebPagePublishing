@@ -42,34 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
    });
 
-   // 4. Scroll Reveal Animations (Intersection Observer)
-   const fadeElements = document.querySelectorAll(".fade-in");
-
-   // Optional: Only apply animations if user prefers motion
-   const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-   ).matches;
-
-   if (!prefersReducedMotion && "IntersectionObserver" in window) {
-      const observerOptions = {
-         threshold: 0.15,
-         rootMargin: "0px 0px -50px 0px",
-      };
-
-      const scrollObserver = new IntersectionObserver((entries, observer) => {
-         entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-               entry.target.classList.add("visible");
-               observer.unobserve(entry.target); // Once visible, stop observing
-            }
-         });
-      }, observerOptions);
-
-      fadeElements.forEach((el) => scrollObserver.observe(el));
-   } else {
-      // Fallback: If intersection observer isn't supported or motion is reduced, show all elements
-      fadeElements.forEach((el) => el.classList.add("visible"));
-   }
 
    // 5. Donation Form Logic
    const amountBtns = document.querySelectorAll(".amount-btn");
