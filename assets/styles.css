@@ -607,12 +607,21 @@ textarea:focus {
 
 .contact-details li {
    display: flex;
-   align-items: center;
+   align-items: flex-start;
    gap: 15px;
    color: var(--text-main);
 }
 
+.contact-text {
+   display: flex;
+   flex-direction: column;
+}
+
 .contact-icon {
+   margin-top: 3px;
+   /* Aligns icon with first line of text */
+   flex-shrink: 0;
+   /* Prevents icon from squishing */
    width: 40px;
    height: 40px;
    background-color: var(--primary-light);
