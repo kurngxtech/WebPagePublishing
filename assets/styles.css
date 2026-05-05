@@ -15,7 +15,8 @@
    --bg-alt: #F3F8FB;
    --white: #FFFFFF;
 
-   --font-main: 'Poppins', sans-serif;
+   --font-main: 'Afacad', sans-serif;
+   --font-heading: 'Baloo Thambi 2', cursive;
    --border-radius: 16px;
    --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
    --hover-shadow: 0 15px 50px rgba(100, 181, 246, 0.15);
@@ -65,11 +66,17 @@ img {
    TYPOGRAPHY & UTILITIES 
    ========================================= */
 h1,
-h2,
+h2 {
+   font-family: var(--font-heading);
+   font-weight: 700;
+   line-height: 1.3;
+}
+
 h3,
 h4,
 h5,
 h6 {
+   font-family: var(--font-main);
    font-weight: 600;
    line-height: 1.3;
 }
@@ -127,11 +134,6 @@ h6 {
 .btn-secondary:hover {
    background-color: var(--bg-main);
    transform: translateY(-2px);
-}
-
-.btn-block {
-   display: block;
-   width: 100%;
 }
 
 
@@ -242,7 +244,7 @@ h6 {
    justify-content: center;
    color: var(--white);
    text-align: center;
-   background: url('hero.png') center/cover no-repeat;
+   background: url('../components/hero.png') center/cover no-repeat;
 }
 
 .hero-overlay {
@@ -287,7 +289,6 @@ h6 {
 }
 
 .about-heading {
-   font-family: 'Baloo Thambi 2', cursive;
    font-size: 3rem;
    color: var(--text-main);
    margin-bottom: 10px;
@@ -300,13 +301,13 @@ h6 {
 }
 
 .about-subheading {
-   font-family: 'Afacad', sans-serif;
    font-size: 1.2rem;
    color: var(--text-muted);
    margin-top: 15px;
    max-width: 600px;
    margin-left: auto;
    margin-right: auto;
+   font-family: var(--font-main);
 }
 
 .about-content {
@@ -327,7 +328,7 @@ h6 {
    flex-direction: row-reverse;
 }
 
-.about-image-card, 
+.about-image-card,
 .about-text-card {
    flex: 1;
    border-radius: 24px;
@@ -352,14 +353,12 @@ h6 {
 }
 
 .about-text-card h3 {
-   font-family: 'Baloo Thambi 2', cursive;
    font-size: 1.8rem;
    color: var(--primary-dark);
    margin-bottom: 20px;
 }
 
 .about-text-card p {
-   font-family: 'Afacad', sans-serif;
    font-size: 1.15rem;
    color: var(--text-main);
    line-height: 1.7;
@@ -372,7 +371,8 @@ h6 {
 
 /* Responsive for About Section */
 @media (max-width: 991px) {
-   .about-row, 
+
+   .about-row,
    .about-row.reverse {
       flex-direction: column;
       min-height: auto;
@@ -391,7 +391,6 @@ h6 {
    .about-image-card {
       height: 250px;
    }
-   
    .about-text-card {
       padding: 30px 20px;
    }
@@ -407,154 +406,38 @@ h6 {
 .donation-container {
    display: grid;
    grid-template-columns: 1fr 1fr;
-   gap: 50px;
-   align-items: center;
+   gap: 20px;
+   align-items: stretch;
+   /* Ensures cards have the same height */
 }
 
-.donation-info h3 {
-   font-size: 2rem;
-   margin-bottom: 20px;
-}
-
-.donation-info p {
-   color: var(--text-muted);
-   margin-bottom: 30px;
-   font-size: 1.1rem;
-}
-
-.progress-wrapper {
-   margin-bottom: 30px;
-}
-
-.progress-stats {
-   display: flex;
-   justify-content: space-between;
-   margin-bottom: 10px;
-   font-weight: 500;
-}
-
-.progress-stats .raised {
-   color: var(--primary-color);
-}
-
-.progress-bar-bg {
-   height: 12px;
-   background-color: rgba(100, 181, 246, 0.2);
-   border-radius: 20px;
-   overflow: hidden;
-}
-
-.progress-bar-fill {
-   height: 100%;
-   background-color: var(--primary-color);
-   border-radius: 20px;
-   position: relative;
-}
-
-.motivational-message {
-   font-style: italic;
-   color: var(--text-muted);
-   border-left: 4px solid var(--secondary-color);
-   padding-left: 20px;
-   margin-top: 20px;
-}
 
 .donation-form-card {
    background: var(--white);
    padding: 40px;
    border-radius: var(--border-radius);
    box-shadow: var(--card-shadow);
-}
-
-.form-row {
+   text-align: center;
    display: flex;
-   gap: 20px;
+   flex-direction: column;
+   justify-content: center;
 }
 
-.form-group {
-   margin-bottom: 20px;
-   width: 100%;
+.donation-form-card img {
+   height: 60px;
+   /* Consistent height for logos */
+   width: auto;
+   max-width: 100%;
+   object-fit: contain;
+   /* Prevents stretching */
+   margin: 0 auto 20px;
 }
 
-.form-group.half {
-   width: 50%;
-}
-
-label {
-   display: block;
-   margin-bottom: 8px;
-   font-weight: 500;
-   color: var(--text-main);
-   font-size: 0.9rem;
-}
-
-input,
-select,
-textarea {
-   width: 100%;
-   padding: 12px 15px;
-   border: 1px solid #E0E0E0;
-   border-radius: 8px;
-   font-family: inherit;
+.donation-form-card p {
+   margin-bottom: 5px;
    font-size: 1rem;
-   color: var(--text-main);
-   transition: var(--transition);
-   background-color: var(--bg-main);
 }
 
-input:focus,
-select:focus,
-textarea:focus {
-   outline: none;
-   border-color: var(--primary-color);
-   background-color: var(--white);
-   box-shadow: 0 0 0 3px rgba(100, 181, 246, 0.2);
-}
-
-.amount-buttons {
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   gap: 10px;
-}
-
-.amount-btn {
-   padding: 10px;
-   border: 1px solid #E0E0E0;
-   background: var(--bg-main);
-   border-radius: 8px;
-   cursor: pointer;
-   font-family: inherit;
-   font-weight: 500;
-   color: var(--text-main);
-   transition: var(--transition);
-}
-
-.amount-btn:hover {
-   border-color: var(--primary-color);
-}
-
-.amount-btn.active {
-   background-color: var(--primary-light);
-   border-color: var(--primary-color);
-   color: var(--primary-dark);
-}
-
-.input-with-icon {
-   position: relative;
-   display: flex;
-   align-items: center;
-}
-
-.input-with-icon span {
-   position: absolute;
-   left: 15px;
-   color: var(--text-muted);
-   font-weight: 500;
-}
-
-.input-with-icon input {
-   padding-left: 45px;
-}
 
 /* =========================================
    CONTACT SECTION 
@@ -564,14 +447,8 @@ textarea:focus {
 }
 
 .contact-wrapper {
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   gap: 50px;
-}
-
-.contact-info h3 {
-   font-size: 2rem;
-   margin-bottom: 15px;
+   display: flex;
+   justify-content: center;
 }
 
 .contact-info p {
@@ -588,12 +465,21 @@ textarea:focus {
 
 .contact-details li {
    display: flex;
-   align-items: center;
+   align-items: flex-start;
    gap: 15px;
    color: var(--text-main);
 }
 
+.contact-text {
+   display: flex;
+   flex-direction: column;
+}
+
 .contact-icon {
+   margin-top: 3px;
+   /* Aligns icon with first line of text */
+   flex-shrink: 0;
+   /* Prevents icon from squishing */
    width: 40px;
    height: 40px;
    background-color: var(--primary-light);
@@ -629,12 +515,6 @@ textarea:focus {
    transform: translateY(-3px);
 }
 
-.contact-form-card {
-   background: var(--white);
-   padding: 40px;
-   border-radius: var(--border-radius);
-   box-shadow: var(--card-shadow);
-}
 
 /* =========================================
    FOOTER 
@@ -658,14 +538,14 @@ textarea:focus {
    max-width: 300px;
 }
 
-.footer-links h4 {
+.footer-links h3 {
    font-size: 1.2rem;
    margin-bottom: 20px;
    position: relative;
    padding-bottom: 10px;
 }
 
-.footer-links h4::after {
+.footer-links h3::after {
    content: '';
    position: absolute;
    bottom: 0;
@@ -752,15 +632,6 @@ textarea:focus {
       background-color: var(--text-main);
    }
 
-   .form-row {
-      flex-direction: column;
-      gap: 0;
-   }
-
-   .form-group.half {
-      width: 100%;
-   }
-
    .footer-content {
       grid-template-columns: 1fr;
    }
@@ -771,17 +642,11 @@ textarea:focus {
       font-size: 2.2rem;
    }
 
-   .amount-buttons {
-      grid-template-columns: 1fr;
-   }
-
    .section-padding {
       padding: 60px 0;
    }
 
-   .card,
-   .donation-form-card,
-   .contact-form-card {
+   .donation-form-card {
       padding: 25px 20px;
    }
 }
