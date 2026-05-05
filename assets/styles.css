@@ -136,11 +136,6 @@ h6 {
    transform: translateY(-2px);
 }
 
-.btn-block {
-   display: block;
-   width: 100%;
-}
-
 
 /* =========================================
    NAVIGATION BAR 
@@ -417,53 +412,6 @@ h6 {
    /* Ensures cards have the same height */
 }
 
-.donation-info h3 {
-   font-size: 2rem;
-   margin-bottom: 20px;
-}
-
-.donation-info p {
-   color: var(--text-muted);
-   margin-bottom: 30px;
-   font-size: 1.1rem;
-}
-
-.progress-wrapper {
-   margin-bottom: 30px;
-}
-
-.progress-stats {
-   display: flex;
-   justify-content: space-between;
-   margin-bottom: 10px;
-   font-weight: 500;
-}
-
-.progress-stats .raised {
-   color: var(--primary-color);
-}
-
-.progress-bar-bg {
-   height: 12px;
-   background-color: rgba(100, 181, 246, 0.2);
-   border-radius: 20px;
-   overflow: hidden;
-}
-
-.progress-bar-fill {
-   height: 100%;
-   background-color: var(--primary-color);
-   border-radius: 20px;
-   position: relative;
-}
-
-.motivational-message {
-   font-style: italic;
-   color: var(--text-muted);
-   border-left: 4px solid var(--secondary-color);
-   padding-left: 20px;
-   margin-top: 20px;
-}
 
 .donation-form-card {
    background: var(--white);
@@ -491,95 +439,6 @@ h6 {
    font-size: 1rem;
 }
 
-.form-row {
-   display: flex;
-   gap: 20px;
-}
-
-.form-group {
-   margin-bottom: 20px;
-   width: 100%;
-}
-
-.form-group.half {
-   width: 50%;
-}
-
-label {
-   display: block;
-   margin-bottom: 8px;
-   font-weight: 500;
-   color: var(--text-main);
-   font-size: 0.9rem;
-}
-
-input,
-select,
-textarea {
-   width: 100%;
-   padding: 12px 15px;
-   border: 1px solid #E0E0E0;
-   border-radius: 8px;
-   font-family: inherit;
-   font-size: 1rem;
-   color: var(--text-main);
-   transition: var(--transition);
-   background-color: var(--bg-main);
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-   outline: none;
-   border-color: var(--primary-color);
-   background-color: var(--white);
-   box-shadow: 0 0 0 3px rgba(100, 181, 246, 0.2);
-}
-
-.amount-buttons {
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   gap: 10px;
-}
-
-.amount-btn {
-   padding: 10px;
-   border: 1px solid #E0E0E0;
-   background: var(--bg-main);
-   border-radius: 8px;
-   cursor: pointer;
-   font-family: inherit;
-   font-weight: 500;
-   color: var(--text-main);
-   transition: var(--transition);
-}
-
-.amount-btn:hover {
-   border-color: var(--primary-color);
-}
-
-.amount-btn.active {
-   background-color: var(--primary-light);
-   border-color: var(--primary-color);
-   color: var(--primary-dark);
-}
-
-.input-with-icon {
-   position: relative;
-   display: flex;
-   align-items: center;
-}
-
-.input-with-icon span {
-   position: absolute;
-   left: 15px;
-   color: var(--text-muted);
-   font-weight: 500;
-}
-
-.input-with-icon input {
-   padding-left: 45px;
-}
 
 /* =========================================
    CONTACT SECTION 
@@ -657,12 +516,6 @@ textarea:focus {
    transform: translateY(-3px);
 }
 
-.contact-form-card {
-   background: var(--white);
-   padding: 40px;
-   border-radius: var(--border-radius);
-   box-shadow: var(--card-shadow);
-}
 
 /* =========================================
    FOOTER 
@@ -780,15 +633,6 @@ textarea:focus {
       background-color: var(--text-main);
    }
 
-   .form-row {
-      flex-direction: column;
-      gap: 0;
-   }
-
-   .form-group.half {
-      width: 100%;
-   }
-
    .footer-content {
       grid-template-columns: 1fr;
    }
@@ -799,17 +643,11 @@ textarea:focus {
       font-size: 2.2rem;
    }
 
-   .amount-buttons {
-      grid-template-columns: 1fr;
-   }
-
    .section-padding {
       padding: 60px 0;
    }
 
-   .card,
-   .donation-form-card,
-   .contact-form-card {
+   .donation-form-card {
       padding: 25px 20px;
    }
 }
