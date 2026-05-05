@@ -41,4 +41,59 @@ document.addEventListener("DOMContentLoaded", () => {
          }
       });
    });
+
+   // 4. Gallery Slider Logic
+   const slider = document.getElementById('gallery-slider');
+   if (slider) {
+      const slides = slider.querySelectorAll('.gallery-slide');
+      const prevBtn = document.querySelector('.prev-btn');
+      const nextBtn = document.querySelector('.next-btn');
+      
+      let currentIndex = 0;
+      const totalSlides = slides.length;
+      let slideInterval;
+
+      const updateSlider = () => {
+         slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+      };
+
+      const nextSlide = () => {
+         currentIndex = (currentIndex + 1) % totalSlides;
+         updateSlider();
+      };
+
+      const prevSlide = () => {
+         currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+         updateSlider();
+      };
+
+      // Auto slide
+      const startAutoSlide = () => {
+         slideInterval = setInterval(nextSlide, 2500); // 2.5 seconds per slide
+      };
+
+      const stopAutoSlide = () => {
+         clearInterval(slideInterval);
+      };
+
+      // Event Listeners for buttons
+      nextBtn.addEventListener('click', () => {
+         nextSlide();
+         stopAutoSlide();
+         startAutoSlide(); // Reset interval
+      });
+
+      prevBtn.addEventListener('click', () => {
+         prevSlide();
+         stopAutoSlide();
+         startAutoSlide(); // Reset interval
+      });
+
+      // Pause on hover
+      slider.addEventListener('mouseenter', stopAutoSlide);
+      slider.addEventListener('mouseleave', startAutoSlide);
+
+      // Initialize
+      startAutoSlide();
+   }
 });

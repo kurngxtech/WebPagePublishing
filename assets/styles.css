@@ -398,6 +398,103 @@ h6 {
 }
 
 /* =========================================
+   GALLERY SECTION 
+   ========================================= */
+.gallery {
+   background-color: var(--bg-main);
+}
+
+.gallery-subheading {
+   font-size: 1.2rem;
+   color: var(--text-muted);
+   margin-top: 15px;
+   max-width: 600px;
+   margin-left: auto;
+   margin-right: auto;
+   font-family: var(--font-main);
+}
+
+.gallery-wrapper {
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 20px;
+   max-width: 900px;
+   margin: 0 auto;
+}
+
+.gallery-slider-container {
+   overflow: hidden;
+   border-radius: 24px;
+   box-shadow: var(--card-shadow);
+   width: 100%;
+}
+
+.gallery-slider {
+   display: flex;
+   transition: transform 0.8s ease-in-out;
+}
+
+.gallery-slide {
+   min-width: 100%;
+   height: 500px;
+   object-fit: cover;
+   display: block;
+}
+
+.slider-btn {
+   background-color: var(--white);
+   color: var(--primary-color);
+   border: none;
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+   transition: var(--transition);
+   flex-shrink: 0;
+   z-index: 10;
+}
+
+.slider-btn:hover {
+   background-color: var(--primary-color);
+   color: var(--white);
+   transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+   .gallery-wrapper {
+      position: relative;
+   }
+   
+   .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+   }
+   
+   .slider-btn.prev-btn {
+      left: 10px;
+   }
+   
+   .slider-btn.next-btn {
+      right: 10px;
+   }
+   
+   .slider-btn:hover {
+      transform: translateY(-50%) scale(1.1);
+   }
+
+   .gallery-slide {
+      height: 300px;
+   }
+}
+
+/* =========================================
    DONATION SECTION 
    ========================================= */
 .donate {
