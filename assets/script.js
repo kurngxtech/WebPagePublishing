@@ -20,6 +20,27 @@ document.addEventListener("DOMContentLoaded", () => {
    });
 
    // 3. Smooth Scrolling Logic
+   function easeInOutCubic(t) {
+      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+   }
+
+   function smoothScrollTo(targetY, duration) {
+      const startY = window.scrollY;
+      const distance = targetY - startY;
+      let startTime = null;
+
+      function step(timestamp) {
+         if (!startTime) startTime = timestamp;
+         const elapsed = timestamp - startTime;
+         const progress = Math.min(elapsed / duration, 1);
+         const ease = easeInOutCubic(progress);
+         window.scrollTo(0, startY + distance * ease);
+         if (progress < 1) requestAnimationFrame(step);
+      }
+
+      requestAnimationFrame(step);
+   }
+
    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener("click", function (e) {
          e.preventDefault();
@@ -29,12 +50,12 @@ document.addEventListener("DOMContentLoaded", () => {
          const target = document.querySelector(targetId);
          if (target) {
             const navbarHeight = navbar.getBoundingClientRect().height;
-            const targetTop = target.getBoundingClientRect().top + window.scrollY - navbarHeight;
+            const targetTop =
+               target.getBoundingClientRect().top +
+               window.scrollY -
+               navbarHeight;
 
-            window.scrollTo({
-               top: targetTop,
-               behavior: "smooth",
-            });
+            smoothScrollTo(targetTop, 850);
 
             // Close mobile menu if open
             if (navLinks.classList.contains("active")) {
@@ -46,12 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
    });
 
    // 4. Gallery Slider Logic
-   const slider = document.getElementById('gallery-slider');
+   const slider = document.getElementById("gallery-slider");
    if (slider) {
-      const slides = slider.querySelectorAll('.gallery-slide');
-      const prevBtn = document.querySelector('.prev-btn');
-      const nextBtn = document.querySelector('.next-btn');
-      
+      const slides = slider.querySelectorAll(".gallery-slide");
+      const prevBtn = document.querySelector(".prev-btn");
+      const nextBtn = document.querySelector(".next-btn");
+
       let currentIndex = 0;
       const totalSlides = slides.length;
       let slideInterval;
@@ -80,21 +101,21 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       // Event Listeners for buttons
-      nextBtn.addEventListener('click', () => {
+      nextBtn.addEventListener("click", () => {
          nextSlide();
          stopAutoSlide();
          startAutoSlide(); // Reset interval
       });
 
-      prevBtn.addEventListener('click', () => {
+      prevBtn.addEventListener("click", () => {
          prevSlide();
          stopAutoSlide();
          startAutoSlide(); // Reset interval
       });
 
       // Pause on hover
-      slider.addEventListener('mouseenter', stopAutoSlide);
-      slider.addEventListener('mouseleave', startAutoSlide);
+      slider.addEventListener("mouseenter", stopAutoSlide);
+      slider.addEventListener("mouseleave", startAutoSlide);
 
       // Initialize
       startAutoSlide();
