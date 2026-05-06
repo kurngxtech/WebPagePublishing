@@ -28,9 +28,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
          const target = document.querySelector(targetId);
          if (target) {
-            target.scrollIntoView({
+            const navbarHeight = navbar.getBoundingClientRect().height;
+            const targetTop = target.getBoundingClientRect().top + window.scrollY - navbarHeight;
+
+            window.scrollTo({
+               top: targetTop,
                behavior: "smooth",
-               block: "start",
             });
 
             // Close mobile menu if open
