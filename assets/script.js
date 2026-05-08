@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       function step(timestamp) {
          if (!startTime) startTime = timestamp;
-         const elapsed = timestamp - startTime;
+         const elapsed = timestamp - startTime;1
          const progress = Math.min(elapsed / duration, 1);
          const ease = easeInOutCubic(progress);
          window.scrollTo(0, startY + distance * ease);
