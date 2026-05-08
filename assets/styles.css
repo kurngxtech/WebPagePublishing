@@ -176,6 +176,12 @@ h6 {
    transition: color 0.3s;
 }
 
+.logo-icon {
+   height: 2rem;
+   width: auto;
+   object-fit: contain;
+}
+
 .navbar.scrolled .logo {
    color: var(--text-main);
 }
@@ -243,7 +249,7 @@ h6 {
    justify-content: center;
    color: var(--white);
    text-align: center;
-   background: url('../components/hero.png') center/cover no-repeat;
+   background: url('../components/homePage_photo.png') center calc(50% - 50px) / cover no-repeat;
 }
 
 .hero-overlay {
@@ -480,7 +486,7 @@ h6 {
    .gallery-slide {
       height: 300px;
    }
-   
+
    .slider-btn {
       width: 40px;
       height: 40px;
@@ -489,7 +495,7 @@ h6 {
    .slider-btn.prev-btn {
       left: 10px;
    }
-   
+
    .slider-btn.next-btn {
       right: 10px;
    }
