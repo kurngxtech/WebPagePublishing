@@ -5,11 +5,18 @@ document.addEventListener("DOMContentLoaded", () => {
    const navLinks = document.querySelector(".nav-links");
 
    // Add background to navbar on scroll
+   let isScrolling = false;
    window.addEventListener("scroll", () => {
-      if (window.scrollY > 50) {
-         navbar.classList.add("scrolled");
-      } else {
-         navbar.classList.remove("scrolled");
+      if (!isScrolling) {
+         window.requestAnimationFrame(() => {
+            if (window.scrollY > 50) {
+               navbar.classList.add("scrolled");
+            } else {
+               navbar.classList.remove("scrolled");
+            }
+            isScrolling = false;
+         });
+         isScrolling = true;
       }
    });
 
@@ -19,49 +26,16 @@ document.addEventListener("DOMContentLoaded", () => {
       hamburger.classList.toggle("active");
    });
 
-   // 3. Smooth Scrolling Logic
-   function easeInOutCubic(t) {
-      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-   }
-
-   function smoothScrollTo(targetY, duration) {
-      const startY = window.scrollY;
-      const distance = targetY - startY;
-      let startTime = null;
-
-      function step(timestamp) {
-         if (!startTime) startTime = timestamp;
-         const elapsed = timestamp - startTime;1
-         const progress = Math.min(elapsed / duration, 1);
-         const ease = easeInOutCubic(progress);
-         window.scrollTo(0, startY + distance * ease);
-         if (progress < 1) requestAnimationFrame(step);
-      }
-
-      requestAnimationFrame(step);
-   }
-
+   // 3. Mobile Menu Auto-Close on Link Click
    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener("click", function (e) {
-         e.preventDefault();
          const targetId = this.getAttribute("href");
          if (targetId === "#") return; // Ignore placeholder links
 
-         const target = document.querySelector(targetId);
-         if (target) {
-            const navbarHeight = navbar.getBoundingClientRect().height;
-            const targetTop =
-               target.getBoundingClientRect().top +
-               window.scrollY -
-               navbarHeight;
-
-            smoothScrollTo(targetTop, 850);
-
-            // Close mobile menu if open
-            if (navLinks.classList.contains("active")) {
-               navLinks.classList.remove("active");
-               hamburger.classList.remove("active");
-            }
+         // Close mobile menu if open
+         if (navLinks.classList.contains("active")) {
+            navLinks.classList.remove("active");
+            hamburger.classList.remove("active");
          }
       });
    });
@@ -116,6 +90,14 @@ document.addEventListener("DOMContentLoaded", () => {
       // Pause on hover
       slider.addEventListener("mouseenter", stopAutoSlide);
       slider.addEventListener("mouseleave", startAutoSlide);
+
+      // Pause when video is playing
+      const videos = slider.querySelectorAll("video");
+      videos.forEach(video => {
+         video.addEventListener("play", stopAutoSlide);
+         video.addEventListener("pause", startAutoSlide);
+         video.addEventListener("ended", startAutoSlide);
+      });
 
       // Initialize
       startAutoSlide();

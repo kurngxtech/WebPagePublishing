@@ -11,6 +11,7 @@
    <link
       href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&family=Baloo+Thambi+2:wght@400;500;600;700;800&display=swap"
       rel="stylesheet">
+   <link rel="preload" as="image" href="components/homePage_photo.png" fetchpriority="high">
    <link rel="stylesheet" href="assets/styles.css">
 </head>
 
@@ -19,7 +20,8 @@
    <nav class="navbar" id="navbar">
       <div class="nav-container">
          <a href="#" class="logo">
-            <img src="components/orphanage_logo_toonout.png" alt="Seeds of Hope Logo" class="logo-icon">
+            <img src="components/orphanage_logo_toonout.png" alt="Seeds of Hope Logo" class="logo-icon" width="32"
+               height="32">
             Seeds of Hope
          </a>
          <ul class="nav-links">
@@ -64,7 +66,8 @@
             <!-- Row 1: Image Left, Text Right -->
             <div class="about-row">
                <div class="about-image-card">
-                  <img src="components/SeedsOfHope_Founder.png" alt="Children learning and playing">
+                  <img src="components/about_section/SeedsOfHope_Founder.png" alt="Children learning and playing"
+                     width="600" height="400" loading="lazy">
                </div>
                <div class="about-text-card">
                   <h3>Our Founders Backstories</h3>
@@ -83,7 +86,8 @@
             <!-- Row 2: Text Left, Image Right -->
             <div class="about-row reverse">
                <div class="about-image-card">
-                  <img src="components/aboutOrphanage.PNG" alt="Our cozy facility">
+                  <img src="components/about_section/aboutOrphanage.PNG" alt="Our cozy facility" width="600"
+                     height="400" loading="lazy">
                </div>
                <div class="about-text-card">
                   <h3>Growing Together</h3>
@@ -108,7 +112,8 @@
          <div class="section-title">
             <h2>Our Gallery</h2>
             <div class="underline"></div>
-            <p class="gallery-subheading">A glimpse into the beautiful moments and smiles we share every day. For more activities we shared, please follow our social media on <a href="#contact">Contact Section</a> below.</p>
+            <p class="gallery-subheading">A glimpse into the beautiful moments and smiles we share every day. For more
+               activities we shared, please follow our social media on <a href="#contact">Contact Section</a> below.</p>
          </div>
       </div>
       </div> <!-- End of container -->
@@ -122,12 +127,17 @@
          </button>
          <div class="gallery-slider-container">
             <div class="gallery-slider" id="gallery-slider">
-               <img src="components/gellery_section/gallery_2.png" alt="Gallery image 1" class="gallery-slide">
-               <img src="components/gellery_section/Gallery_3.jpeg" alt="Gallery image 2" class="gallery-slide">
-               <img src="components/gellery_section/gallery_4.png" alt="Gallery image 3" class="gallery-slide">
-               <img src="components/gellery_section/gallery_5.png" alt="Gallery image 4" class="gallery-slide">
-               <img src="components/gellery_section/gallery_6.png" alt="Gallery image 5" class="gallery-slide">
-               <video class="gallery-slide" controls>
+               <img src="components/gellery_section/gallery_2.png" alt="Gallery image 1" class="gallery-slide"
+                  width="800" height="900" loading="lazy">
+               <img src="components/gellery_section/Gallery_3.jpeg" alt="Gallery image 2" class="gallery-slide"
+                  width="800" height="900" loading="lazy">
+               <img src="components/gellery_section/gallery_4.png" alt="Gallery image 3" class="gallery-slide"
+                  width="800" height="900" loading="lazy">
+               <img src="components/gellery_section/gallery_5.png" alt="Gallery image 4" class="gallery-slide"
+                  width="800" height="900" loading="lazy">
+               <img src="components/gellery_section/gallery_6.png" alt="Gallery image 5" class="gallery-slide"
+                  width="800" height="900" loading="lazy">
+               <video class="gallery-slide" controls preload="none" width="800" height="900">
                   <source src="components/gellery_section/angklung_performance.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                </video>
@@ -191,13 +201,15 @@
          </div>
          <div class="donation-container">
             <div class="donation-form-card">
-               <img src="components/bank_mandiri.png" alt="donation bank account" id="mandiri-logo">
+               <img src="components/donation_section/bank_mandiri.png" alt="donation bank account" id="mandiri-logo"
+                  width="100" height="60" loading="lazy">
                <p>Bank Mandiri</p>
                <p>Bank Account: 1450 - 0122 - 21871</p>
                <p>a. n. YAYASAN BENIH HARAPAN</p>
             </div>
             <div class="donation-form-card">
-               <img src="components/bank_bni.png" alt="donation bank account" id="bni-logo">
+               <img src="components/donation_section/bank_bni.png" alt="donation bank account" id="bni-logo" width="100"
+                  height="60" loading="lazy">
                <p>Bank BNI</p>
                <p>Bank Account: 004 - 940 - 4826</p>
                <p>a. n. YAYASAN BENIH HARAPAN</p>
@@ -280,7 +292,8 @@
       <div class="container footer-content">
          <div class="footer-brand">
             <a href="#" class="logo footer-logo">
-               <img src="components/orphanage_logo_toonout.png" alt="Seeds of Hope Logo" class="logo-icon">
+               <img src="components/orphanage_logo_toonout.png" alt="Seeds of Hope Logo" class="logo-icon" width="32"
+                  height="32" loading="lazy">
                Seeds of Hope
             </a>
             <p>Spreading Love, Hope, and a Better Future for Every Child.</p>

@@ -29,6 +29,11 @@
    box-sizing: border-box;
 }
 
+html {
+   scroll-behavior: smooth;
+   scroll-padding-top: 80px; /* Offset for sticky navbar */
+}
+
 body {
    font-family: var(--font-main);
    color: var(--text-main);
@@ -773,6 +778,11 @@ h6 {
    .navbar.scrolled .hamburger span,
    .hamburger span {
       background-color: var(--text-main);
+   }
+
+   .navbar.scrolled {
+      backdrop-filter: none; /* Expensive on mobile */
+      background-color: var(--white);
    }
 
    .footer-content {
