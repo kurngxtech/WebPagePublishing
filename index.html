@@ -11,6 +11,7 @@
    <link
       href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&family=Baloo+Thambi+2:wght@400;500;600;700;800&display=swap"
       rel="stylesheet">
+   <link rel="preload" as="image" href="components/homePage_photo.png" fetchpriority="high">
    <link rel="stylesheet" href="assets/styles.css">
 </head>
 
@@ -19,12 +20,15 @@
    <nav class="navbar" id="navbar">
       <div class="nav-container">
          <a href="#" class="logo">
-            <span class="logo-icon">🌿</span>
+            <img src="components/orphanage_logo_toonout.png" alt="Seeds of Hope Logo" class="logo-icon" width="32"
+               height="32">
             Seeds of Hope
          </a>
          <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#mission">Our Current Mission</a></li>
             <li><a href="#donate">Donate</a></li>
             <li><a href="#contact">Contact</a></li>
          </ul>
@@ -62,18 +66,18 @@
             <!-- Row 1: Image Left, Text Right -->
             <div class="about-row">
                <div class="about-image-card">
-                  <img src="components/orphanage_1.png" alt="Children learning and playing">
+                  <img src="components/about_section/SeedsOfHope_Founder.png" alt="Children learning and playing"
+                     width="600" height="400" loading="lazy">
                </div>
                <div class="about-text-card">
-                  <h3>Our Heart and Mission</h3>
+                  <h3>Our Founders Backstories</h3>
                   <p>
-                     Seeds of Hope Orphanage is more than just a shelter; it's a family where every child is seen,
-                     heard, and loved. We focus on providing a holistic environment that nurtures not only their
-                     physical needs but also their emotional and creative spirits.
-                  </p>
-                  <p>
-                     By creating a safe space for learning and play, we empower our children to overcome their past and
-                     look forward to a future filled with possibilities.
+                     Seeds of Hope Children’s Home was founded in 2000 by Tommy N. and his late wife, Sandra Elim, with
+                     a vision to create a safe and loving home for children in need across Bali. Built on the values of
+                     compassion, family, and education, the orphanage was created not only to provide shelter, but also
+                     to give every child the opportunity to grow with dignity, confidence, and hope for a brighter
+                     future. Today, the foundation continues to honor their mission by nurturing children in a warm
+                     family-centered environment where care, responsibility, and togetherness are part of everyday life.
                   </p>
                </div>
             </div>
@@ -81,7 +85,26 @@
             <!-- Row 2: Text Left, Image Right -->
             <div class="about-row reverse">
                <div class="about-image-card">
-                  <img src="components/orphanage_2.png" alt="Our cozy facility">
+                  <img src="components/about_section/new_developer.png" alt="Our cozy facility" width="600" height="400"
+                     loading="lazy">
+               </div>
+               <div class="about-text-card">
+                  <h3>Continuing the Mission</h3>
+                  <p>
+                     After Tommy’s retirement, the orphanage leadership was continued by his son, Yusak, and his wife,
+                     Oca, who now dedicate their lives to caring for the children and preserving the founders’ vision.
+                     Together, they focus on creating a supportive home where children can learn, develop valuable life
+                     skills, and pursue education from an early age through higher studies. Seeds of Hope continues to
+                     believe that every child deserves love, guidance, and the chance to build a meaningful future
+                     within a caring and encouraging community.
+                  </p>
+               </div>
+            </div>
+
+            <div class="about-row">
+               <div class="about-image-card">
+                  <img src="components/about_section/aboutOrphanage.png" alt="Our cozy facility" width="600"
+                     height="400" loading="lazy">
                </div>
                <div class="about-text-card">
                   <h3>Growing Together</h3>
@@ -100,22 +123,109 @@
       </div>
    </section>
 
+   <!-- Gallery Section -->
+   <section class="gallery section-padding" id="gallery">
+      <div class="container fade-in">
+         <div class="section-title">
+            <h2>Our Gallery</h2>
+            <div class="underline"></div>
+            <p class="gallery-subheading">A glimpse into the beautiful moments and smiles we share every day. For more
+               activities we shared, please follow our social media on <a href="#contact">Contact Section</a> below.</p>
+         </div>
+      </div> <!-- End of container -->
+
+      <div class="gallery-wrapper">
+         <button class="slider-btn prev-btn" aria-label="Previous image">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+               <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+         </button>
+         <div class="gallery-slider-container">
+            <div class="gallery-slider" id="gallery-slider">
+               <img src="components/gellery_section/gallery_2.png" alt="Gallery image 1" class="gallery-slide"
+                  width="800" height="900" loading="lazy">
+               <img src="components/gellery_section/Gallery_3.jpeg" alt="Gallery image 2" class="gallery-slide"
+                  width="800" height="900" loading="lazy">
+               <img src="components/gellery_section/gallery_4.png" alt="Gallery image 3" class="gallery-slide"
+                  width="800" height="900" loading="lazy">
+               <img src="components/gellery_section/gallery_5.png" alt="Gallery image 4" class="gallery-slide"
+                  width="800" height="900" loading="lazy">
+               <img src="components/gellery_section/gallery_6.png" alt="Gallery image 5" class="gallery-slide"
+                  width="800" height="900" loading="lazy">
+               <video class="gallery-slide" controls preload="none" width="800" height="900">
+                  <source src="components/gellery_section/angklung_performance.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+               </video>
+            </div>
+         </div>
+         <button class="slider-btn next-btn" aria-label="Next image">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+               <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+         </button>
+      </div>
+   </section>
+
+   <!-- Our Current Mission Section -->
+   <section class="mission section-padding" id="mission">
+      <div class="container fade-in">
+         <div class="section-title">
+            <h2>Our Current Mission</h2>
+            <div class="underline"></div>
+         </div>
+         <div class="mission-content">
+            <p>
+               Right now, our most urgent priority is the renovation of the Seeds of Hope orphanage building.
+               For years, our children have called this place home &mdash; a sanctuary of laughter, growth, and
+               belonging.
+               But with every heavy rainfall, that sanctuary is threatened. Floodwaters creep through the walls,
+               damage the floors, and disrupt the daily lives of the children who depend on us most. What was once
+               a rare occurrence has now become a recurring crisis that we can no longer ignore.
+            </p>
+            <p>
+               The flooding has taken a serious toll on the structural integrity of our building. Walls have
+               cracked, flooring has warped, and several rooms have become unsafe to use. Our children deserve
+               better &mdash; they deserve a home that stands strong against every storm. That is why we have launched
+               an urgent renovation mission to repair, reinforce, and restore the orphanage to a safe, dry,
+               and welcoming space for every child in our care.
+            </p>
+            <p>
+               This renovation is more than bricks and concrete &mdash; it is an act of love. Every contribution
+               brings us one step closer to giving our children a stable foundation where they can dream,
+               grow, and thrive without fear. Together, we can rebuild what the floods have taken and ensure
+               that Seeds of Hope remains a true home for every child who walks through its doors.
+            </p>
+         </div>
+      </div>
+   </section>
+
    <!-- Donation Section -->
    <section class="donate section-padding" id="donate">
       <div class="container fade-in">
          <div class="section-title">
             <h2>Make a Donation</h2>
             <div class="underline"></div>
+            <p class="donation-subheading">Your generosity goes directly where it's needed most. Donations to our
+               <strong>Bank Mandiri</strong> account support the daily needs of our children &mdash; from meals and
+               school supplies to clothing and health care &mdash; ensuring every child in our care feels safe,
+               nurtured, and loved. Contributions to our <strong>Bank BNI</strong> account are dedicated to the urgent
+               renovation of our orphanage building, which has been severely damaged by recurring floods caused by heavy
+               rains, and must be restored to give our children a safe and stable home.
+            </p>
          </div>
          <div class="donation-container">
             <div class="donation-form-card">
-               <img src="components/bank_mandiri.png" alt="donation bank account" id="mandiri-logo">
+               <img src="components/donation_section/bank_mandiri.png" alt="donation bank account" id="mandiri-logo"
+                  width="100" height="60" loading="lazy">
                <p>Bank Mandiri</p>
                <p>Bank Account: 1450 - 0122 - 21871</p>
                <p>a. n. YAYASAN BENIH HARAPAN</p>
             </div>
             <div class="donation-form-card">
-               <img src="components/bank_bni.png" alt="donation bank account" id="bni-logo">
+               <img src="components/donation_section/bank_bni.png" alt="donation bank account" id="bni-logo" width="100"
+                  height="60" loading="lazy">
                <p>Bank BNI</p>
                <p>Bank Account: 004 - 940 - 4826</p>
                <p>a. n. YAYASAN BENIH HARAPAN</p>
@@ -198,7 +308,8 @@
       <div class="container footer-content">
          <div class="footer-brand">
             <a href="#" class="logo footer-logo">
-               <span class="logo-icon">🌿</span>
+               <img src="components/orphanage_logo_toonout.png" alt="Seeds of Hope Logo" class="logo-icon" width="32"
+                  height="32" loading="lazy">
                Seeds of Hope
             </a>
             <p>Spreading Love, Hope, and a Better Future for Every Child.</p>
